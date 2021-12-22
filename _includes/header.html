@@ -1,0 +1,69 @@
+<header class="s-header sticky offset scrolling">
+
+    <div class="header-logo">
+        <a href="index.html">
+            <img src="{{ "/assets/images/logo.svg" | relative_url }}" alt="Homepage">
+        </a>
+    </div>
+
+    <div class="header-content">
+
+        {%- assign default_paths = site.pages | map: "path" -%}
+        {%- assign page_paths = site.header_pages | default: default_paths -%}
+        {%- if page_paths -%}
+        <nav class="row header-nav-wrap">
+            <ul class="header-nav">
+
+                <li><a href="{{ "/" | relative_url }}" title="Home">Home</a></li>
+                {%- for path in page_paths -%}
+                {%- assign my_page = site.pages | where: "path", path | first -%}
+                {%- if my_page.title -%}
+                <li><a href="{{ my_page.url | relative_url }}" title="{{ my_page.title | escape }}">{{ my_page.title | escape }}</a></li>
+                {%- endif -%}
+                {%- endfor -%}
+                <li><a class="smoothscroll" href="#about" title="About">About</a></li>
+                <li><a class="smoothscroll" href="#services" title="Services">Services</a></li>
+                <li><a class="smoothscroll" href="#portfolio" title="Works">Works</a></li>
+                <li><a href="mailto:#0" title="Contact us">Say Hello</a></li>
+            </ul>
+        </nav> <!-- end header-nav-wrap -->
+        {%- endif -%} 
+
+        <a href="#0" class="btn btn--stroke btn--small">Download CV</a>
+
+    </div> <!-- end header-content -->
+
+    <a class="header-menu-toggle" href="#0"><span>Menu</span></a>
+
+</header> 
+
+    <!-- hero
+    ================================================== -->
+    <section id="hero" class="s-hero target-section" data-parallax="scroll" data-image-src="{{ "/assets/images/hero-bg-3000.jpg" | relative_url }}" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
+
+        <div class="row hero-content">
+
+            <div class="column large-full">
+
+                <h1>
+                Hello, I'm John Doe, <br>
+                a frontend developer <br>
+                & designer currently <br>
+                based somewhere.
+                </h1>
+
+                <ul class="hero-social">
+                    {%- include social.html -%}
+                </ul> <!-- end hero-social -->
+
+            </div> 
+
+        </div> <!-- end hero-content -->
+
+        <div class="hero-scroll">
+            <a href="#about" class="scroll-link smoothscroll">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 24l-8-9h6v-15h4v15h6z"/></svg>
+            </a>
+        </div> <!-- end hero-scroll -->
+
+    </section> <!-- end s-hero -->

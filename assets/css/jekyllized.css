@@ -1,0 +1,34 @@
+/* ===================================================================
+ * # content section
+ *
+ * ------------------------------------------------------------------- */
+ .s-content {
+	background-color: #ffffff;
+	position: relative;
+  }
+  
+  .s-content .right-vert-line {
+	background-color: #302c59;
+  }
+  
+  .s-content__section--profile {
+	padding-top: 28rem;
+	padding-bottom: 4rem;
+	min-height: 108rem;
+	position: relative;
+  }
+  
+  .s-content__section--profile .row {
+	position: relative;
+  }
+  
+  .s-content__section--profile .profile-pic {
+	width: 24vw;
+	position: absolute;
+	top: 8rem;
+	left: calc(50% + 80px);
+  }
+
+  .s-content .section-intro .subhead {
+	margin-bottom: 3rem;
+  }
